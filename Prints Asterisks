@@ -1,0 +1,25 @@
+/* Compiled in Unix
+
+This Porgram prints the asterisk pattern as shown below.
+
+*****
+*****
+*****
+*****
+*****
+*/
+
+#include <cstdlib>    // Standard Library
+#include <iostream>   //Input/Output Stream
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+ cout<<"*****\n";
+    cout<<"*****\n";
+    cout<<"*****\n";
+    cout<<"*****\n";
+    cout<<"*****\n";
+ //   system("PAUSE");
+    return EXIT_SUCCESS;
+}
