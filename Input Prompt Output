@@ -1,0 +1,31 @@
+/* Compiled in Unix
+
+This C++ program writes a C++ o prompt 
+the user to input her/his name and prints this 
+name on the screen, as shown below. The text 
+from keyboard can be read by using cin>> and 
+to display the text on the screen you can use cout<<.
+
+Hello Sok! 
+*/
+
+#include <cstdlib>    // Standard Library
+#include <iostream>   //Input/Output Stream
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+ 
+char name[20];
+
+
+cout<<"Enter Your Name\t";
+cin>>name\t;
+cout<<"Hello"<<name<<"!\n";
+
+cout<<"\n";
+return 0;
+
+
+ 
+}
