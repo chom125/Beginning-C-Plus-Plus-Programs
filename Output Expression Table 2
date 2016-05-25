@@ -1,0 +1,55 @@
+/*
+ This C++ program to produce the output as shown below:
+  
+ */
+ 
+ 
+ /* Expected Output:
+ 
+ Before               Expression                   After
+
+5                 |        x++                     | 5       |6
+
+5                 |        x--                     |5        |4       
+
+5                 |        ++x                     |6       |6  
+
+5                 |        --x                     |4       |4 
+
+
+*/
+
+#include<cstdlib>   // This header defines several 
+                    //general purpose functions, including 
+					//dynamic memory management, random number 
+					//generation, communication with the environment, 
+					//integer arithmetics, searching, sorting and 
+					//converting.
+
+#include<iostream>
+
+using namespace std;
+
+
+int main(int argc, char*argv[])
+
+{
+
+int x =5;
+
+
+cout<<"Result\n";
+
+cout<<"Contents of x\t"<<"Expressions\t"<<"Contents of x\n";
+cout<<"Before\t\t\t"<<"\tExpression"<<"\tAfter\n";
+cout<<"\n";
+
+cout<<x<<"|\t"<<"x++"<<"|\t\t\t"<<"x"<<"\t"<<"\t|"<<"x="<<x+1<<"\n";
+cout<<x<<"|\t"<<"x--"<<"|\t\t\t"<<"x"<<"\t"<<"\t|"<<"x="<<x-1<<"\n";
+cout<<x<<"|\t"<<"++x"<<"|\t\t\t"<<"x+1"<<"\t"<<"\t|"<<"x="<<x+1<<"\n";
+cout<<x<<"|\t"<<"--x"<<"|\t\t\t"<<"x-1"<<"\t"<<"\t|"<<"x="<<x-1<<"\n";
+
+
+system("PAUSE");
+return EXIT_SUCCESS;
+
