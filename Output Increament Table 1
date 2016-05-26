@@ -1,0 +1,73 @@
+ /*
+ This C++ program prompts the user to input the integral value of 'a' 
+ and prints out the result as shown below:
+  
+  Confirmed in Unix
+ */
+ 
+ 
+ /* Expected Output:
+ 
+ The value of a is: 10
+……………………..
+The value of ++a is: 11
+Now the value of a is: 11
+ 
+The value of a++ is: 11
+Now the value of a is: 12
+ 
+The value of --a is:11
+Now the value of a is:11
+ 
+The value of a-- is: 11
+Now the value of a is: 10
+*/
+
+#include<cstdlib>   // This header defines several 
+                    //general purpose functions, including 
+					//dynamic memory management, random number 
+					//generation, communication with the environment, 
+					//integer arithmetics, searching, sorting and 
+					//converting.
+
+#include<iostream>
+
+using namespace std;
+
+
+int main(int argc, char*argv[])
+
+{
+
+int a =5;
+
+
+cout<<"Enter a Value";
+cout<<"The value of a is:"<<a; 
+cout<<"--------------------\n";
+
+++a;
+
+cout<<"\nThe value of ++a is:"<<a;
+
+cout<<"\nTht value of a is:"<<a;
+
+--a;
+
+cout<<"\nThe value of --a is:"<<a;
+
+cout<<"\nThe value of a is:"<<a;
+
+cout<<"\nThe value of a-- is:"<<a;
+
+a--;
+
+cout<<"\nThe value of a is:"<<a;
+
+cout<<"\n";
+
+system("PAUSE");
+return EXIT_SUCCESS;
+
+
+}
