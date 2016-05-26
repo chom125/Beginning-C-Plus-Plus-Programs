@@ -1,0 +1,87 @@
+/*
+ This C++ program to generates the results as shown below:
+ 
+Results: =======Quizzes===============
+Enter the score of the first quiz: 90
+Enter the score of the second quiz: 75
+Enter the score of the third quiz: 91
+ =======Mid-term==============
+Enter the score of the mid-term: 80
+=======Final=================
+Enter the score of the final: 89  
+Quiz Total:      256
+Mid-term :       80
+Final:           89
+……………………
+Total:          425
+ */
+ 
+ 
+
+#include<cstdlib>   // This header defines several 
+                    //general purpose functions, including 
+					//dynamic memory management, random number 
+					//generation, communication with the environment, 
+					//integer arithmetics, searching, sorting and 
+					//converting.
+
+#include<iostream>
+#include<iomanip>
+using namespace std;
+float q1, q2, q3;
+float qtotal;
+float midterm;
+float final;
+float total;
+
+int main(int argc, char*argv[])
+
+{
+
+
+
+cout<<"===========QUIZES=============\n";
+
+cout<<"Enter the score of the first quiz: "<<endl;
+cin>>q1;
+cout<<"\n";
+
+cout<<"Enter the score of the second quiz: "<<endl;
+cin>>q2;
+cout<<"\n";
+
+
+cout<<"Enter the score of the third quiz: "<<endl;
+cin>>q3;
+cout<<"\n";
+
+
+cout<<"==============MIDTERM===========\n";
+
+cout<<"Enter the score of the mid-term:";
+
+cin>>midterm;
+cout<<"\n";
+
+cout<<"==============FINAL===========\n";
+
+cout<<"Enter the score for the FINAL:";
+cin>>final;
+cout<<"\n";
+
+qtotal =q1+q2+q3;
+
+total=qtotal+midterm+final;
+cout<<"Quizz Total"<<setw(5)<<qtotal;
+cout<<"\n";
+
+cout<<"_________________________\n";
+
+cout<<"Total"<<right<<setw(11)<<total;
+cout<<"\n";
+
+system("PAUSE");
+return EXIT_SUCCESS;
+
+
+}
