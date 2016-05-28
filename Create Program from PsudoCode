@@ -1,0 +1,57 @@
+/*	Write a porgram that exicutes the following psudocode:
+
+*/
+
+/*
+a. read x b. read y c. compute p=x*y d. compute s=x+y e. 
+
+total =s^2+p*(s-x)*(p+y) f.
+*/
+
+//Verified in Unix
+
+#include<cstdlib>
+#include<iostream> 
+#include<iomanip>
+
+using namespace std;
+
+
+
+int main(int argc, char *argv[])
+
+{
+
+float x;
+float y;
+float p;
+float s;
+float total;
+	
+cout<<"Enter x value  ";
+cin>>x;
+cout<<"\n";
+
+cout<<"Enter y value  ";
+cin>>y;
+cout<<"\n";
+
+p=x*y;
+s=x+y;
+
+total=s*s*s+p*(s-x)*(p+y); 
+cout<<"Total"<<"\t"<<total;
+cout<<"\n";
+
+
+//system("PAUSE");
+
+return EXIT_SUCCESS;
+
+
+
+
+
+
+}
+
