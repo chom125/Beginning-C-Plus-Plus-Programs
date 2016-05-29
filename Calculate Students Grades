@@ -1,0 +1,51 @@
+/*	
+This program determines a student’s grade. It will read three types 
+of scores (quiz, mid-term, and final scores) and determine the grade 
+based on the following rules:
+
+/*
+Rules:
+-if the average score =90% =>grade=A
+-if the average score >= 70% and <90% => grade=B
+-if the average score>=50% and <70% =>grade=C
+-if the average score<50% =>grade=F
+*/
+
+//Verified in Unix
+
+#include<cstdlib>
+#include<iostream> 
+#include<iomanip>
+
+using namespace std;
+
+
+
+int main(int argc, char *argv[])
+{
+
+float x;
+float y;
+float z;
+float avg;
+
+cout<<"Enter 3 scores (quiz grades, mid-term, and final grades)\n";
+cin>>x>>y>>z;
+
+avg=(x+y+z)/3;
+
+if(avg>=90)cout<<"Grade is an A";
+else if(avg>=70 && avg<90) cout<<"Grade is a B";
+else if(avg>=50 && avg<70) cout<<"Grade is a C";
+else if(avg>=50) cout<<"Grade is a F";
+else cout<<"Invalid";
+cout<<"\n";
+
+
+  
+//system("PAUSE");
+
+return EXIT_SUCCESS;
+
+}
+
