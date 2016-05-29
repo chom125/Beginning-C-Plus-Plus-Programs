@@ -1,0 +1,57 @@
+/*	
+This program program will prompt the user to input the values 
+of a, b, and c. It then computes the real roots of the equation: 
+ax^2+bx+c=0.
+
+*/
+/*
+Rules:
+-if a and b are zero=> no solution
+-if a is zero=>one root (-c/b)
+-if b2-4ac is negative=>no roots
+-Otherwise=> two roots
+The roots can be computed using the following formula:
+x1=-b+(b2-4ac)1/2/2a
+x=-b-(b2-4ac)1/2/2a
+
+*/
+
+//Verified in Unix
+
+#include<cstdlib>
+#include<iostream> 
+#include<iomanip>
+#include<cmath>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+
+float a;
+float b;
+float c;
+float delta;
+
+cout<<"Enter Values of a b and c seperated by spaces\n";
+cin>>a>>b>>c;
+
+if(a==0 && b==0)cout<<"No Root!";
+else if(a==0) cout<<"The Equation has only one root"<<-b/c;
+
+else {
+	
+	delta= b*b-4*a*c;
+	if(delta<0)cout<<"No Root!";
+	else cout<<"The equation has two roots"<<-b+sqrt(b*b-4*a*c)/(2*a)
+	<<"x1"<<-b-sqrt(b*b-4*a*c)/(2*a);
+	
+	cout<<"\n";
+	
+}
+//system("PAUSE");
+
+    return EXIT_SUCCESS;
+
+}
+
