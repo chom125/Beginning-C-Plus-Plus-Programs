@@ -1,0 +1,46 @@
+/*	
+Finding the Max number from 3 inputs:
+This program prompts the user to input three integer values 
+and find the greatest value of the three values.
+*/
+
+/*
+Example:
+Enter 3 integer vales separated by space: 10 15 20
+The greatest value is: 20
+*/
+
+//Verified in Unix
+
+#include<cstdlib>
+#include<iostream> 
+#include<iomanip>
+
+using namespace std;
+
+
+
+int main(int argc, char *argv[])
+{
+
+int a;
+int b;
+int c;
+int max;
+
+cout<<"Enter Three Numbers\n";
+cin>>a>>b>>c;
+
+  max=a;                  //let max take the first value
+  if(max<b) max=b;        //compare max with b and update max
+ 
+  if(max<c) max=c;        //compare max with c and update max
+  
+  cout<<"Max="<<max;      //output max
+  
+//system("PAUSE");
+
+  return EXIT_SUCCESS;
+
+}
+
