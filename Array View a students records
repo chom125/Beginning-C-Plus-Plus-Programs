@@ -1,0 +1,199 @@
+//This C++ program to answers inquiries about a students data.
+//It will display a menu that enables the users to choose 
+//whether they want to view all students ’records or view only 
+//the records of a specific student by the student’s id. 
+//See sample output below.
+
+/*MENU
+
+          1. View all students’ records
+          2. View a student’s records by ID
+          3. Show the highest and the lowest final scores
+          
+          
+          */
+          
+#include <cstdlib>
+#include <iostream>
+using namespace std; 
+
+void showheading();
+int hivalue(int stu[4][5]);
+int lovalue(int stu[4][5]);
+
+void displaymenu(){
+
+cout<<"------------------------------------------------------------";
+
+cout<<"                                MENU                        ";
+
+cout<<" 1. View all student records"<<"\n";
+cout<<" 2. View a student records by ID"<<"\n";
+cout<<" 3. Show the highest and lowest scores"<<"\n";
+                  
+	
+	
+}          
+
+
+void viewall(int stu[4][5]){
+	
+ int i,j;
+	
+
+
+//display heading
+
+showheading();
+
+for(i=0;i<4;i++){
+	
+	for(j=0;j<5;j++)
+	cout<<stu[i][j]<<"\t\t";
+	cout<<"\n";
+	}
+	
+	
+}
+
+void viewbyid(int stu[4][5]){
+	
+	int id,i,j;
+	bool l=false;
+	
+	cout<<"Please enter a student's ID";
+	
+	cin>>id;
+	
+	for(i=0;i<4;i++){
+		
+		if(stu[i][0]==id){
+			
+			showheading();l-true;
+			
+			 for(j=0;j<5;j++)cout<<stu[i][j]<<"\t\t";}
+			 
+			 cout<<"\n";}
+			 
+			 
+		}
+		
+   void showhl(int stu[4][5]){
+
+     cout<<"The higest final score is:"<<hivalue(stu);
+
+     cout<<"\n";
+
+     cout<<"The lowest final score is:"<<lovalue(stu);
+
+     cout<<"\n"; 
+	
+}
+
+ 
+
+void showheading(){
+
+cout<<"========================================================\n";
+
+cout<<"StudentID      Quiz1          Quiz2          Mid-term         Final\n";
+
+cout<<"========================================================\n";
+
+     }
+
+int hivalue(int stu[4][5]){
+
+    int *max,i;
+
+    max=&stu[0][4];
+
+    for(i=0;i<4;i++)
+
+      if(*max<stu[i][4])*max=stu[i][4];
+
+    return(*max);
+
+   
+
+}
+
+int lovalue(int stu[4][5]){
+
+    int *min,i;
+
+    min=&stu[0][4];
+
+    for(i=0;i<4;i++)
+
+      if(*min>stu[i][4])*min=stu[i][4];
+
+    return(*min);
+
+   
+
+}
+
+ 
+
+    
+
+int main(int argc, char *argv[])
+
+{
+
+//construct 2d array to store students'records
+
+int stu[4][5]={{1232,32,34,43,43},{2345,34,34,54,35},{3432,45,54,56,34},{3456,56,34,34,56}};
+
+ 
+
+//show menu
+
+displaymenu();
+
+int yourchoice;
+
+char confirm;
+
+do
+
+{
+
+cout<<"Enter your choice(1-3):";
+
+cin>>yourchoice;
+
+ 
+
+switch(yourchoice){
+
+ case 1:viewall(stu);break;
+
+ case 2:viewbyid(stu);break;
+
+ case 3:showhl(stu);break;
+
+ default:cout<<"invalid";
+
+                   }
+
+                   
+
+cout<<"Press y or Y to continue:";
+
+       cin>>confirm;
+
+}while(confirm=='y'||confirm=='Y');
+
+ 
+
+ 
+
+  system("PAUSE");
+
+ 
+
+  return EXIT_SUCCESS;
+
+}
