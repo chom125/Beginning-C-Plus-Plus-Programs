@@ -1,0 +1,76 @@
+//This C++ program will prompt the user to input ten integer values. It then
+//displays the smallest and greatest of those values. It also displays the value that occurs the most. 
+
+#include<iostream>
+#include <cstdlib>
+using namespace std;
+
+	int main(int argc, char *argv[]) 
+	{
+			
+	int arr[10];
+	int model[10][2];
+	cout<<"Enter 10 integer values\n"; 
+	for(int l=0;l<10;l++){
+		cout<<"value"<<l<<":";
+		cin>>arr[l];
+				
+	}
+
+//find the max value and min value
+
+  	int i,j,temp;
+  	
+//sort array to find max and min values
+
+   for(i=0;i<10;i++)
+  for(j=9;j>i;j--)
+     if(arr[j]<arr[j-1]) {
+         int temp=arr[j];
+         arr[j]=arr[j-1];
+         arr[j-1]=temp;
+		}
+		
+		
+		cout<<"Max="<<arr[9]<<"\nMin="<<arr[0]<<endl;
+		
+		cout<<"\n";
+		
+		//initialize 2D array storing numbers of occurences
+		//and values
+		
+		for(i=0;i<2;i++)
+		
+		for(j=0;j<10;j++)
+		model[j][i]=0;
+		model[0][0]=1;
+		
+		//find mode
+		
+		for(i=0;j<10;j++)
+		for(i=0;i<10;j++)
+		   if(arr[i]==arr[j+1]) {++model[i][0];model[i][1]=arr[i];}
+		   
+		   //find max occurence
+		   
+		   int max;
+		   int k=0;
+		   
+		   max=model[0][0];
+		   
+		   for(j=0;j<10;j++);
+		     if(max<model[j][0]){max=model[j][0];k=j;}
+		     
+		     //print result
+		     
+		     cout<<"The most occuring item:"<<model[k][1]<<"\n"<<endl;
+		     
+		     cout<<"It occures"<<max<<"times"<<endl;
+		     
+		     cout<<"\n";
+		     
+		     system("PAUSE");
+		     
+		     return EXIT_SUCCESS;
+		     
+		 }
