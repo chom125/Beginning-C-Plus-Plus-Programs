@@ -1,0 +1,54 @@
+/*This program uses a two-dimensional array to store values 
+in rows and columns. 
+By using this two-dimensional array, a progrm is writen in C++ 
+to display a table of numbers as shown below:
+
+1	2 	3	4 	5	 
+6	7 	 	9 	10
+11	12 	13	14 	15
+16	17 	18	19 	20
+21	22 	23	24
+
+*/
+          
+#include <conio.h>
+#include <iostream>
+using namespace std; 
+
+  int main(){
+  	
+  	int tArr[5][5];
+  	int i,j;
+  	
+  	for(i=0;i<5;i++)//assign value to the two-dimensional array
+  	 
+  	  for(j=0;j<=5;j++){
+  	  	
+  	  	if(i==0) tArr[i][j]=j+1;//fill the first row
+  	  	
+  	  	if(i>0 && j==0)
+  	  	
+  	  	tArr[i][j]=tArr[i-1][4]+1;//fetching the value ofthe last
+  	  							  //cell in previous row
+  	  	
+  	  	else
+  	  	
+  	  	tArr[i][j]=tArr[i][j-1]+1;//fill subsequent cells}
+  	  }
+  	  	for(i=0;i<5;i++){
+			for(j=0;j<5;j++)  	  	
+  	  	cout<<tArr[i][j]<<"\t";
+  	  	cout<<endl;
+  	  }
+  	  
+  	  getch();
+  	  
+  	  return 0;
+  	  
+    }
+    
+    
+  	  	
+  	  	
+	  	
+  	
