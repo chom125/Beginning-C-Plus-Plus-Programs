@@ -1,0 +1,49 @@
+/* This C++ program displays a matrix as shown below. 
+The diagonal of the matrix fills with 0. The lower side 
+fills will -1s and the upper side fills with 1s.
+
+
+0	1 	1	1 	1	 
+-1	0 	1	1 	1
+-1	-1 	0	1 	1
+-1	-1 	-1	0 	1
+-1	-1 	-1	-1 	0
+ */
+
+#include<iostream>
+#include<conio.h>
+
+using namespace std;
+
+   int main()
+    {
+
+    
+
+     int matrix[5][5];
+     int i,j;
+     for(i=0;i<5;i++) //assign values to the matrix
+
+        for(j=0;j<5;j++){
+
+           if(i==j) matrix[i][j]=0;//if row=column=> fill the matrix with 0
+
+           else if(i>j) matrix[i][j]=-1;//if row>columns=> fill matrix with -1
+           else matrix[i][j]=1;//if row<columns=> fill matrix with 1
+
+             }    
+
+           
+     for(i=0;i<5;i++){ //print the array
+        for(j=0;j<5;j++)
+            cout<<matrix[i][j]<<"\t";
+        cout<<"\n";  
+       }
+     getch();
+     return 0;
+
+ 
+
+    }
+  	
+  
