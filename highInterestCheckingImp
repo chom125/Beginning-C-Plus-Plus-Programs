@@ -1,0 +1,55 @@
+
+//Implementation file date
+   
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include "highInterestChecking.h"
+
+using namespace std;
+
+const double highInterestChecking::INTEREST_RATE = 0.05;
+const double highInterestChecking::MIN_BALANCE = 5000.00;
+  
+highInterestChecking::highInterestChecking(string n, int acctNumber, 
+                                           double bal)
+                     : noServiceChargeChecking(n, acctNumber, bal)
+{
+    minimumBalance = MIN_BALANCE;
+    interestRate = INTEREST_RATE;
+}
+
+highInterestChecking::highInterestChecking(string n, int acctNumber,
+                                            double bal, double minBal, 
+                                            double intRate)
+                     : noServiceChargeChecking(n, acctNumber, bal, 
+                                               minBal, intRate)
+{
+}
+
+double highInterestChecking::getInterestRate()
+{
+    return interestRate;
+}
+
+void highInterestChecking::setInterestRate(double intRate)
+{
+    interestRate = intRate;
+}
+
+void highInterestChecking::postInterest()
+{
+    balance = balance + balance * interestRate;
+}
+
+void highInterestChecking::createMonthlyStatement()
+{
+    postInterest();
+}
+
+void highInterestChecking::print()
+{
+    cout << fixed << showpoint << setprecision(2);
+    cout << "Higher Interest Checking: " << getName()<< "\t ACCT# "      
+         << getAccountNumber()<< "\tBalance: $" << getBalance();
+}
