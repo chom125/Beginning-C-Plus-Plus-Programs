@@ -1,0 +1,35 @@
+/*
+Exercise 1: Write a C++ program to print the following lines:
+1) You are 10 years old. 
+2) You are too young to play the game.
+
+*/
+
+#include<iostream>
+using namespace std;
+
+int age = 10;
+int main()
+{
+
+  cout << "You are "<< age << " "<< "years old." << endl;
+
+
+  cout << "You are too young to play the game." << endl;
+
+  
+  system("PAUSE");
+  
+  return 0;
+
+
+
+}
+
+
+
+
+
+
+
+ . 
