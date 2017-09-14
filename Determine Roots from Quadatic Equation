@@ -1,0 +1,65 @@
+/*C++ if else and logical operators (con.)
+This c++ program to compute the real roots of the equation: ax2+bx+c=0.
+
+ x = -b + squareroot(b^2 - 4ac)/2a //formula
+ 
+1. The program will prompt the user to input the values of a, b, and c. 
+2. It then computes the real roots of the equation based on the following rules:
+-if a and b are zero=> no solution
+-if a is zero=>one root (-c/b)
+-if b2-4ac is negative=>no roots
+-Otherwise=> two roots
+The roots can be computed using the following formula:
+x1=-b+(b2-4ac)1/2/2a
+x=-b-(b2-4ac)1/2/2a
+*/
+
+#include<iostream>
+#include <cmath>
+
+using namespace std;
+
+
+int main(){
+	
+	int a, b, c, x, x1, x2, x3;
+	
+	cout <<"Enter the values for the roots in this order a, b, c " << endl;
+	cin>>a>>b>>c;
+	cout << "\n";
+
+//The roots can be computed using the following formula:
+   x1 =-b+(b^2-4*a*c)/2*a;
+   x2 =-b-(b^2-4*a*c)/2*a;
+   x3 = b^2 - 4*a*c;
+	
+	x = -b + sqrt(b^2 - 4*a*c)/2*a;//calculate the roots
+	
+	if(a == 0 && b == 0) 
+	{
+		cout <<"If a = 0 and b = 0 then there is no solution" << endl;
+	}
+	
+	else if(a == 0)
+	{
+	    cout <<"If a = 0 there is one solution --> (-c/b)" << -c/b << endl;	
+	} 
+	
+	
+	if(x3 < 0)
+	
+	{
+		
+		cout <<"b2-4ac is negative=>no roots" << endl;
+
+    }
+    
+    else
+        cout <<"There are two roots" << x1<< x2 << endl;
+
+	
+	
+	
+	
+	return 0;
+}
