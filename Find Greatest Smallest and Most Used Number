@@ -1,0 +1,60 @@
+/*
+1. This c++ program that will:
+
+1. Prompt the user to input ten integer values.
+2. Display the smallest and greatest of those values. 
+3. It also displays the value that occurs the most. 
+
+*/
+#include <cstdlib>
+#include <iostream>
+using namespace std;
+int main(int argc, char *argv[])
+{
+  int arr[10], a[10];                  //establising arrays
+  int mode[10][2];                    // establishing 2x2 array
+   cout<<"Enter 10 integer values\n"; //prompting user
+  for(int l=0;l<10;l++) {             //initiate loop to gather matrix values
+
+     cout<<"value "<<l<<":";         //track number of input values
+	 cin>>a[l];                      //creating input matrix of 10 values
+     //cout<<"The value entered was" << a[l] << endl; //tracking the input values
+} 
+ //find the max value and min value
+ int i,j,temp;
+//sort array to find max and min values
+ for(i=0;i<10;i++)                  //initiating loop from  i = 0 to i = 10
+  for(j=9;j>i;j--)                  //comparing first count i with j to see if we should start counting down.
+     if(arr[j]<arr[j-1]) {          //finding the min value here
+         int temp=arr[j];           //storing the smallest value here into temp (a[j] is smallest number).
+         arr[j]=arr[j-1];          //smallest number now is equal to step down itteration. Because we are moving down by one number.
+         arr[j-1]=temp;            //store the smallest number in temp file. We do this so we can compare the smallest number with the next number down. 
+}
+                 
+  cout<<"Max="<<arr[j]<<"\nMin="<<arr[j-1];
+  cout<<"\n";
+//initialize 2D array storing numbers of occurences, and values
+ for(i=0;i<2;i++)
+   for(j=0;j<10;j++)mode[j][i]=0;
+     mode[0][0]=1;
+ 
+//find mode
+ for(i=0;i<10;i++)
+  for(j=0;j<10;j++)
+   if(arr[i]==arr[j+1]) {++mode[i][0];mode[i][1]=arr[i];}
+  
+//find max occurence
+int max;
+int k=0;
+max=mode[0][0];
+   for(j=0;j<10;j++)
+    if(max<mode[j][0]){max=mode[j][0];k=j;}
+   
+//print result
+  cout<<"The most occurring item:"<<mode[k][1]<<"\n";
+  cout<<"It occurs "<<max<<" times.";
+  cout<<"\n";
+  system("PAUSE");
+ 
+  return EXIT_SUCCESS;
+} 
